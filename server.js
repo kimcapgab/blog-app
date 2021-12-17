@@ -1,16 +1,16 @@
 import express from 'express'
 import logger from 'morgan'
-import db from './db/connection'
-import Post from './models/post'
+import db from './db/connection.js'
 import cors from 'cors'
-import postsRoutes from "./routes/posts"
+import postsRoutes from "./routes/posts.js"
 
-
+const app = express()
 const PORT = process.env.PORT || 3000
-const app = expresss()
+
 app.use(express.json())
-app.use(logger('dev'))
 app.use(cors())
+app.use(logger('dev'))
+
 app.use('/api', postsRoutes)
 
 db.on("connected", () => {
