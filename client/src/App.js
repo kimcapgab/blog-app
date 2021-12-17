@@ -1,5 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
 import './App.css';
+import Create from './screens/Create/Create';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <Route path='/' element={<h1>Home</h1>} />
         <Route path='/posts' element={<h1>all posts</h1>} />
         <Route path='/detail/:id' element={<h1>details</h1>} />
-        <Route path='/create' element={<h1>create</h1>} />
+        <Route path='/create' element={<Create/>} />
         <Route path='/edit/:id' element={<h1>edit</h1>}/>
       </Routes>
     </div>
