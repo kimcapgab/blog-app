@@ -1,9 +1,13 @@
+
 import Navbar from "../Navbar/Navbar"
 
-export default function Layout() {
+export default function Layout(props) {
   return (
-    <div>
-      
+    <div className="layout">
+      <Navbar />
+      <div className="layout-children">
+        {props.children}
+      </div>
     </div>
   )
   
