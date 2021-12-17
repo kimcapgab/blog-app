@@ -1,4 +1,4 @@
-import Post from "../models/post";
+import Post from "../models/post.js";
 
 
 //When application recieves a get request, this code will execute

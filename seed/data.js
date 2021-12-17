@@ -1,5 +1,5 @@
-import db from "../db/connection"
-import Post from "../models/post"
+import db from "../db/connection.js"
+import Post from "../models/post.js"
 
 const insertData = async () => {
   await db.dropDatabase()
