@@ -1,24 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { getAllPosts } from '../../posts'
+
 import Posts from '../posts/Posts'
 
-export default function Home() {
+export default function Home({posts}) {
 
-  const [posts, setPosts] = useState([])
 
-  useEffect(() => {
-    const allPosts = async () => {
-      const res = await getAllPosts()
-      setPosts(res)
-      console.log(res)
-    }
-    allPosts()
-},[])
 
   return (
     <div>
       {posts && posts.map((post) => (
-        <Posts post={post} />
+        <Posts post={post} _id={post._id} />
       ))}
     </div>
   )
