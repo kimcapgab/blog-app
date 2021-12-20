@@ -4,8 +4,6 @@ import Posts from '../posts/Posts'
 
 export default function Home({posts}) {
 
-
-
   return (
     <div>
       {posts && posts.map((post) => (

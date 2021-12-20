@@ -1,10 +1,14 @@
 #header-container{
-  border: red 5px solid;
+  /* border: red 5px solid; */
+  background-color: lightcoral;
   display: flex;
   justify-content: right;
+  height: 80px;
 }
 
 .header-element{
-  border: 5px blue solid;
+  /* border: 5px blue solid; */
   margin-right: 80px;
+  font-size: 28px;
+  color: lightgreen;
 }
