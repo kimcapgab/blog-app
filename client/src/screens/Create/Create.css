@@ -1,0 +1,36 @@
+#background{
+  background-color: lightgray;
+}
+#form-container{
+  /* border: orange 5px solid; */
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+#CreateForm{
+  font-size: 40px;
+  width: 100%;
+  /* border: 5px solid red; */
+  color: rgb(88, 177, 88);
+  font-weight: bold;
+}
+
+#form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(224, 77, 77);
+  border: solid red 5px;
+  width: 40%;
+  height: 40%;
+}
+
+
+
+.form-field{
+  /* border: 5px solid blue; */
+  width: 20%;
+}
