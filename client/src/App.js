@@ -11,6 +11,7 @@ import { getAllPosts } from './posts';
 function App() {
 
   const [posts, setPosts] = useState([])
+  const [toggle,setToggle] = useState(false)
 
   useEffect(() => {
     const allPosts = async () => {
@@ -19,18 +20,18 @@ function App() {
       console.log(res)
     }
     allPosts()
-  }, [])
+  }, [toggle])
   
-  
+
   return (
     <div className="App">
 
       <Routes>
         <Route path='/' element={<h1>Home</h1>} />
         <Route path='/posts' element={<Home posts={posts}/>} />
-        <Route path='/detail/:id' element={<Details posts={posts}/>} />
-        <Route path='/create' element={<Create />} />
-        <Route path='/edit/:id' element={<Edit />}/>
+        <Route path='/detail/:_id' element={<Details posts={posts} setToggle={setToggle}/>} />
+        <Route path='/create' element={<Create setToggle={setToggle} />} />
+        <Route path='/edit/:_id' element={<Edit />}/>
       </Routes>
     </div>
   );
