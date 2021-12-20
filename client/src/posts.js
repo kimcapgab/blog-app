@@ -1,4 +1,4 @@
-import api from './apiConfig'
+import api from './services/apiConfig'
 
 export const postNewPosts = async (body) => {
   try {
@@ -18,3 +18,11 @@ export const getPost = async (id) => {
   }
 }
 
+export const getAllPosts = async () => {
+  try {
+    const res = await api.get('/posts')
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout/Layout"
 import { useState } from 'react'
-import { postNewPosts } from "../../services/posts"
+import { postNewPosts } from "../../posts"
 
 
 export default function Create() {
