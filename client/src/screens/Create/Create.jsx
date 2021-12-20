@@ -1,15 +1,35 @@
 import Layout from "../../components/Layout/Layout"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { postNewPosts } from "../../posts"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import { getPost } from "../../posts"
+import { updatePost } from "../../services/posts"
 
 
-export default function Create({setToggle}) {
+export default function Create({setToggle, posts}) {
   const [author, setName] = useState('')
   const [title, setTitle] = useState('')
   const [description, setPost] = useState('')
   const [imgURL, setImg] = useState('')
+
+  const { _id } = useParams()
   const nav = useNavigate()
+
+
+
+  useEffect(() => {
+    if (posts) { 
+    const fetchProduct = async () => {
+      const post = await getPost(_id)
+      
+      setName(post.author)
+      setTitle(post.title)
+      setPost(post.description)
+      setImg(post.imgURL)
+    }
+    fetchProduct()
+  }
+  }, [_id])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -19,8 +39,12 @@ export default function Create({setToggle}) {
       description,
       imgURL,
     }
-
-    await postNewPosts(newPost)
+    if (posts) {
+      await updatePost(_id, newPost)
+    } else {
+      await postNewPosts(newPost)
+    }
+    
     setToggle(e => !e)
     nav('/')
   }
