@@ -26,3 +26,14 @@ export const getAllPosts = async () => {
     throw error
   }
 }
+
+
+export const deletePost = async (id) => {
+  try {
+    const res = await api.delete(`/posts/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
