@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
-import { getPost } from "../../services/posts";
+import { getPost } from "../../posts";
 
 export default function Details(props) {
   const { id } = useParams()
