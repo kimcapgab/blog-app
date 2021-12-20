@@ -1,0 +1,10 @@
+#header-container{
+  border: red 5px solid;
+  display: flex;
+  justify-content: right;
+}
+
+.header-element{
+  border: 5px blue solid;
+  margin-right: 80px;
+}
