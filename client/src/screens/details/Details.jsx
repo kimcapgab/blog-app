@@ -7,10 +7,14 @@ import { deletePost } from "../../services/posts";
 
 
 export default function Details(props) {
-  
+
+
+  const params = useParams()
+
   const [post, setPost] = useState({})
   const { _id } = useParams()
   const nav = useNavigate()
+
 
 
 
@@ -29,6 +33,7 @@ export default function Details(props) {
       <h1>{post.title}</h1>
       <p>{post.description}</p>
       <p>{post.author}</p>
+
       <img src={post.imgURL} />
       <button onClick={()=>{deletePost(_id); props.setToggle(e=>!e);nav('/')}}>Delete this</button>
       <button>Edit this post</button>
