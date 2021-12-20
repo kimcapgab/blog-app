@@ -31,7 +31,7 @@ function App() {
         <Route path='/posts' element={<Home posts={posts}/>} />
         <Route path='/detail/:_id' element={<Details posts={posts} setToggle={setToggle}/>} />
         <Route path='/create' element={<Create setToggle={setToggle} />} />
-        <Route path='/edit/:_id' element={<Edit />}/>
+        <Route path='/edit/:_id' element={<Create posts={posts} setToggle={setToggle}/>}/>
       </Routes>
     </div>
   );

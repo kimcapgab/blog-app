@@ -37,3 +37,11 @@ export const deletePost = async (id) => {
   }
 }
 
+export const updatePost = async (id, post) => {
+  try {
+    const res = await api.put(`/posts/${id}`, post)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
