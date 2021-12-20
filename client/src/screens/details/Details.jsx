@@ -1,24 +1,31 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import { getPost } from "../../posts";
+import { deletePost } from "../../services/posts";
+
 
 export default function Details(props) {
 
+
   const params = useParams()
+
   const [post, setPost] = useState({})
+  const { _id } = useParams()
+  const nav = useNavigate()
+
+
 
 
   useEffect(() => {
-    const fetchPost = async () => {
-      const post = await getPost(params._id)
-      setPost(post)
+    const fetchProduct = async () => {
+      const product = await getPost(_id)
+      setPost(product)
+
     }
-    fetchPost()
-  },[params._id])
-
-
+    fetchProduct()
+  }, [_id])
 
 
   return (
@@ -28,7 +35,7 @@ export default function Details(props) {
       <p>{post.author}</p>
 
       <img src={post.imgURL} />
-      <button>Delete this</button>
+      <button onClick={()=>{deletePost(_id); props.setToggle(e=>!e);nav('/')}}>Delete this</button>
       <button>Edit this post</button>
     </Layout>
   )
