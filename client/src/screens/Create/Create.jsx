@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout/Layout"
 import { useState } from 'react'
-import { postNewPost } from "../../services/posts"
+import { postNewPosts } from "../../services/posts"
 
 
 export default function Create() {
@@ -18,7 +18,7 @@ export default function Create() {
       img,
     }
 
-    await postNewPost(newPost)
+    await postNewPosts(newPost)
   }
 
   return (
