@@ -23,6 +23,7 @@ export default function Create() {
 
   return (
     <Layout>
+      <h1>Create Your Post</h1>
       <form onSubmit={handleSubmit}>
         <input type='text' name='name' value={name} onChange={(e)=>setName(e.target.value)}/>
         <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
