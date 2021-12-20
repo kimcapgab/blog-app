@@ -17,8 +17,8 @@ export default function Home() {
 
   return (
     <div>
-      {posts.map(() => (
-        <Posts posts={posts} />
+      {posts && posts.map((post) => (
+        <Posts post={post} />
       ))}
     </div>
   )
