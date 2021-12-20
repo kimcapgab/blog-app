@@ -1,9 +1,7 @@
 import api from './apiConfig'
 
-
-export const getPosts = async () => {
+export const postNewPosts = async (body) => {
   try {
-
     const res = await api.post('/posts', body)
     return res.data
   } catch (error) {
@@ -14,9 +12,9 @@ export const getPosts = async () => {
 export const getPost = async (id) => {
   try {
     const res = await api.get(`/posts/${id}`)
-
     return res.data
   } catch (error) {
-    console.log("error")
+    throw error
   }
 }
+
