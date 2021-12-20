@@ -27,6 +27,7 @@ export const getAllPosts = async () => {
   }
 }
 
+
 export const deletePost = async (id) => {
   try {
     const res = await api.delete(`/posts/${id}`)

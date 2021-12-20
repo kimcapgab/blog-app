@@ -1,9 +1,12 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import './Navbar.css'
 
 export default function Navbar() {
   return (
-    <header>
-      <Link to="/">Blog App</Link>
+    <header id='header-container'>
+      <Link className='header-element' to="/">Blog App</Link>
+      <Link className='header-element' to="/posts">All Posts</Link>
+      <Link className='header-element' to="/create">Create New Post</Link>
     </header>
   )
 }
