@@ -9,11 +9,6 @@ import { updatePost } from "../../services/posts"
 
 export default function Create({setToggle, posts}) {
 
-
-
-
-export default function Create({setToggle}) {
-
   const [author, setName] = useState('')
   const [title, setTitle] = useState('')
   const [description, setPost] = useState('')
@@ -53,7 +48,7 @@ export default function Create({setToggle}) {
     }
     
     setToggle(e => !e)
-    nav('/')
+    nav('/posts')
   }
 
   return (
@@ -64,10 +59,10 @@ export default function Create({setToggle}) {
       <div id='form'>
       <form onSubmit={handleSubmit}>
 
-        <input className='form-field' placeholder='Name' type='text' name='name' value={name} onChange={(e)=>setName(e.target.value)}/>
+        {/* <input className='form-field' placeholder='Name' type='text' name='name' value={name} onChange={(e)=>setName(e.target.value)}/>
         <input className='form-field' placeholder='Title' type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>
         <input className='form-field' placeholder='Post' type='textarea' name='post' value={post} onChange={(e)=>setPost(e.target.value)}/>
-        <input className='form-field' placeholder='ImageURL' type='text' name='img' value={img} onChange={(e) => setImg(e.target.value)} />
+        <input className='form-field' placeholder='ImageURL' type='text' name='img' value={img} onChange={(e) => setImg(e.target.value)} /> */}
 
         <input type='text' name='name' value={author} onChange={(e)=>setName(e.target.value)}/>
         <input type='text' name='title' value={title} onChange={(e) => setTitle(e.target.value)}/>

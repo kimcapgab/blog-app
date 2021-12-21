@@ -4,6 +4,7 @@ import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import { getPost } from "../../posts";
 import { deletePost } from "../../services/posts";
+import { Link } from "react-router-dom";
 
 
 export default function Details(props) {
@@ -35,8 +36,8 @@ export default function Details(props) {
       <p>{post.author}</p>
 
       <img src={post.imgURL} />
-      <button onClick={()=>{deletePost(_id); props.setToggle(e=>!e);nav('/')}}>Delete this</button>
-      <button>Edit this post</button>
+      <button onClick={()=>{deletePost(_id); props.setToggle(e=>!e);nav('/posts')}}>Delete this</button>
+      <Link to={`/edit/${_id}`} ><button>Edit this post</button></Link>
     </Layout>
   )
 }

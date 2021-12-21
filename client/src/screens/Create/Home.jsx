@@ -3,10 +3,10 @@ import Posts from 'client/src/components/Posts.jsx'
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <Layout>
       {posts.map((post) => (
         <Posts post={post}/>
       ))}
-    </div>
+    </Layout>
   )
 }

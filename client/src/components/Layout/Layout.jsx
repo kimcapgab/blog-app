@@ -7,7 +7,6 @@ export default function Layout(props) {
       <div className="layout-children">
         {props.children}
       </div>
-      <p>Delete this </p>
     </div>
   )
   
